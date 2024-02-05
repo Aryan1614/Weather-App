@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="shortcut icon" href="assets/android-chrome-512x512.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+
+        <div class="container">
+
+            <h1 class="heading">Weather App</h1>
+
+            <div class="tab-container">
+
+                <p class="tab" data-userWeather>Your Weather</p>
+                <p class="tab" data-searchWeather>Search Weather</p>
+
+            </div>
+
+            <div class="weather-container">
+
+                <!-- grant location container   -->
+                <div class="grant-location-container">
+
+                    <img src="./assets/location.png" alt="" width="80" height="80" loading="lazy" class="img">
+
+                    <p class="grantHeading">Grant location Access</p>
+                    <p class="grantPara">Allow Access to get Weather Information</p>
+                    <button class="btn" data-grantAccess>Grant Access</button>
+
+                </div>
+
+                <!-- search weather form  -->
+                <form class="form-container" data-searchForm>
+                    <input type="text" placeholder="Search for city... " data-searchInput class="data-text">
+                    <button class="button" type="submit">
+                        <img src="./assets/search.png" alt="" width="20" height="20" loading="lazy">
+                    </button>
+                </form>
+
+
+                <!-- loading screen container  -->
+                <div class="loading-container">
+                    <img src="./assets/loading.gif" alt="" width="150" height="150" loading="lazy">
+                    <p>Loading</p>
+                </div>
+
+
+                <!-- Weather info show ui  -->
+                <div class="user-info-container">
+
+                    <!-- city name and flag  -->
+                    <div class="name">
+                        <p data-cityName class="cityName"></p>
+                        <img data-countryIcon width="30" height="25">
+                    </div>
+
+                    <!-- weather description  -->
+                    <p data-weatherDesc class="WeatherDesc"></p>
+
+                    <!-- weather icon  -->
+                    <img data-weatherIcon>
+
+                    <!-- temprature  -->
+                    <p data-temp class="Temperature"></p>
+
+                    <div class="parameter-container">
+
+                        <!-- card 1  -->
+                        <div class="parameter">
+                            <img src="./assets/wind.png" alt="" class="imgWeather">
+                            <p class="Desc">Windspeed</p>
+                            <p data-windSpeed class="datadesc"></p>
+                        </div>
+
+                        <!-- card 2  -->
+                        <div class="parameter">
+                            <img src="./assets/humidity.png" alt="" class="imgWeather">
+                            <p class="Desc">Humidity</p>
+                            <p data-humidity class="datadesc"></p>
+                        </div>
+
+                        <!-- card 3  -->
+                        <div class="parameter">
+                            <img src="./assets/cloud.png" alt="" class="imgWeather">
+                            <p class="Desc">Clouds</p>
+                            <p data-cloudiness class="datadesc"></p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- api error handling -->
+                <div class="api-eroor-container" data-apiError>
+                    <img src="./assets/not-found.png" alt="">
+                    <p>City Not Found..</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
